@@ -1,0 +1,11 @@
+names:
+  0: white_car
+  1: red_car
+  2: gray_car
+  3: blue_car
+  4: black_car
+  5: yellow_car
+  6: green_car
+path: ../datasets/vehicle
+train: images/train
+val: images/val
