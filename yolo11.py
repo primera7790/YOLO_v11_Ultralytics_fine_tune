@@ -30,3 +30,10 @@ def predict(image):
         result.show()
 
 
+def base_predict(image):
+    model = YOLO('yolo11n.pt')
+
+    result = model(image)
+
+    for i in result:
+        print(i.boxes)
