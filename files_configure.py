@@ -1,10 +1,22 @@
 import os
-import random
 import re
 import shutil
+import random
 
+import kaggle
 import yaml
 from glob import glob
+
+
+def dataset_load():
+    # Вариант 1. Авторизуем API, скачиваем с Kaggle и распаковываем в папку data
+    kaggle.api.authenticate()
+    kaggle.api.dataset_download_files('brasarkaya/vehicle-color-dataset', path='.', unzip=True)
+
+    # Вариант 2. Собственноручно скачиваем архив по ссылке, распаковываем в папку all_data
+    # Dataset: https://www.kaggle.com/datasets/brasarkaya/vehicle-color-dataset/data
+
+    return
 
 
 def data_yaml_init():
@@ -24,6 +36,7 @@ def data_yaml_init():
 
     with open('datasets/vehicle/vehicle.yaml', 'w') as file:
         yaml.dump(data, file)
+
     return
 
 
